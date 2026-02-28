@@ -1,0 +1,27 @@
+{
+    "id":  "news-001",
+    "title":  "Breaking News: Host City Security Drills Ramp Up Ahead of FIFA 2026",
+    "slug":  "host-city-security-drills-fifa-2026",
+    "category":  "news",
+    "subcategory":  "articles",
+    "file":  "/content/fifa/world-cup-2026-guide.md",
+    "url":  "/news/articles/host-city-security-drills-fifa-2026.html",
+    "tags":  [
+                 "world cup 2026 news",
+                 "host cities",
+                 "breaking news"
+             ],
+    "date":  "2026-02-25",
+    "modified":  "2026-02-25",
+    "author":  "Editorial Wire",
+    "thumbnail":  "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1200\u0026q=85\u0026auto=format",
+    "thumbnailAlt":  "Security operations center preparing for FIFA tournament",
+    "excerpt":  "Joint task forces across host cities launched final simulation drills to test mobility, access control, and emergency routing.",
+    "readTime":  "2 min",
+    "wordCount":  420,
+    "featured":  false,
+    "trending":  true,
+    "breaking":  true,
+    "views":  11200,
+    "schemaType":  "NewsArticle"
+}

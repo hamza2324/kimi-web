@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/video/
+Disallow: /content/
+Sitemap: https://hjtrending.site/sitemap.xml
+Sitemap: https://hjtrending.site/sitemap-news.xml

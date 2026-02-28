@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIFA World Cup 2026 News, Schedule, Teams & Host Cities | HJTrending</title>
+  <meta name="description" content="Latest FIFA World Cup 2026 schedule updates, team analysis, host city coverage, and predictions from HJTrending.">
+  <meta name="keywords" content="fifa world cup 2026, world cup 2026 schedule, world cup 2026 teams, fifa 2026 host cities, football news today 2026">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://hjtrending.site/fifa/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FIFA World Cup 2026 News, Schedule, Teams & Host Cities">
+  <meta property="og:description" content="Latest FIFA World Cup 2026 schedule updates, team analysis, host city coverage, and predictions from HJTrending.">
+  <meta property="og:url" content="https://hjtrending.site/fifa/">
+  <meta property="og:image" content="https://hjtrending.site/assets/images/og/homepage-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FIFA World Cup 2026 News, Schedule, Teams & Host Cities">
+  <meta name="twitter:description" content="Latest FIFA World Cup 2026 schedule updates, team analysis, host city coverage, and predictions from HJTrending.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"FIFA WORLD CUP 2026","url":"https://hjtrending.site/fifa/","description":"Latest FIFA World Cup 2026 schedule updates, team analysis, host city coverage, and predictions from HJTrending."}</script>
+</head>
+<body>
+  <header class="site-nav" id="site-nav">
+    <a class="brand" href="../"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a>
+    <nav class="desktop-nav"><a href="../">Home</a><a href="../fifa/">FIFA 2026</a><a href="../sports/">Sports</a><a href="../entertainment/">Entertainment</a><a href="../trending/">Trending</a><a href="../gaming/">Gaming</a><a href="../news/">News</a></nav>
+  </header>
+  <main class="section" style="margin-top:84px">
+    <p class="mono" style="color:#FF2D55">HJTRENDING DESK</p>
+    <h1 style="font-family:'Syne',sans-serif;font-size:clamp(40px,8vw,80px);line-height:.95;margin:0">FIFA WORLD CUP 2026</h1>
+    <p style="max-width:760px;color:var(--text-2)">Track tournament format changes, venue updates, tactical previews, and matchday intelligence in one place.</p>
+    <section class="fifa-grid" style="margin-top:28px" id="hub-cards"></section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-bottom"><p>(c) 2026 HJTrending</p></div>
+    <div class="footer-line"></div>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+    fetch('../data/posts.json').then(r=>r.json()).then(posts=>{
+      const host=document.getElementById('hub-cards');
+      const items=posts.filter(p=>p.category==='fifa').slice(0,8);
+      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../post/?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
+    }).catch(()=>{});
+  </script>
+</body>
+</html>

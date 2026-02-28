@@ -1,0 +1,2 @@
+/* Additional post motion utilities */
+.post-fade-in { animation: heroReveal .5s ease both; }

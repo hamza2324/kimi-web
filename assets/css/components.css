@@ -1,0 +1,2 @@
+.card, .badge, .chip { border-radius: 12px; border: 1px solid rgba(248,248,248,.08); }
+.glass { background: rgba(255,255,255,.05); backdrop-filter: blur(20px); }

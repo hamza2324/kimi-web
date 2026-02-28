@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming News 2026, Esports Trends & Sports Simulation Updates | HJTrending</title>
+  <meta name="description" content="Gaming desk covering esports, creator culture, and next-generation sports simulation technology.">
+  <meta name="keywords" content="gaming news 2026, esports news, sports simulation games, football sims">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://hjtrending.site/gaming/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gaming News 2026, Esports Trends & Sports Simulation Updates">
+  <meta property="og:description" content="Gaming desk covering esports, creator culture, and next-generation sports simulation technology.">
+  <meta property="og:url" content="https://hjtrending.site/gaming/">
+  <meta property="og:image" content="https://hjtrending.site/assets/images/og/homepage-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gaming News 2026, Esports Trends & Sports Simulation Updates">
+  <meta name="twitter:description" content="Gaming desk covering esports, creator culture, and next-generation sports simulation technology.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"GAMING FRONTLINE","url":"https://hjtrending.site/gaming/","description":"Gaming desk covering esports, creator culture, and next-generation sports simulation technology."}</script>
+</head>
+<body>
+  <header class="site-nav" id="site-nav">
+    <a class="brand" href="../"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a>
+    <nav class="desktop-nav"><a href="../">Home</a><a href="../fifa/">FIFA 2026</a><a href="../sports/">Sports</a><a href="../entertainment/">Entertainment</a><a href="../trending/">Trending</a><a href="../gaming/">Gaming</a><a href="../news/">News</a></nav>
+  </header>
+  <main class="section" style="margin-top:84px">
+    <p class="mono" style="color:#00FF87">HJTRENDING DESK</p>
+    <h1 style="font-family:'Syne',sans-serif;font-size:clamp(40px,8vw,80px);line-height:.95;margin:0">GAMING FRONTLINE</h1>
+    <p style="max-width:760px;color:var(--text-2)">Coverage of gaming innovation, esports momentum, and sports-tech convergence.</p>
+    <section class="fifa-grid" style="margin-top:28px" id="hub-cards"></section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-bottom"><p>(c) 2026 HJTrending</p></div>
+    <div class="footer-line"></div>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+    fetch('../data/posts.json').then(r=>r.json()).then(posts=>{
+      const host=document.getElementById('hub-cards');
+      const items=posts.filter(p=>p.category==='gaming').slice(0,8);
+      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../post/?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
+    }).catch(()=>{});
+  </script>
+</body>
+</html>

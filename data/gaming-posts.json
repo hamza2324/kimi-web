@@ -1,0 +1,28 @@
+[
+  {
+    "id": "gaming-003",
+    "title": "AI Crowd Era in Sports Games",
+    "slug": "ai-crowd-era-in-sports-games",
+    "category": "gaming",
+    "subcategory": "",
+    "file": "/content/gaming/ai-crowd-era.md",
+    "url": "/gaming/articles/ai-crowd-era-in-sports-games.html",
+    "tags": [
+      "gaming",
+      "trending news"
+    ],
+    "date": "2026-02-26",
+    "modified": "2026-02-26",
+    "author": "HJTrending Editorial Team",
+    "thumbnail": "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1200&q=85&auto=format",
+    "thumbnailAlt": "Breaking trend coverage on HJTrending",
+    "excerpt": "Modern sports games are using eventaware crowd systems. Instead of static loops, crowd behavior reacts to match context, rivalry level, and stadium pressur",
+    "readTime": "1 min",
+    "wordCount": 44,
+    "featured": false,
+    "trending": false,
+    "breaking": false,
+    "views": 0,
+    "schemaType": "NewsArticle"
+  }
+]
