@@ -252,6 +252,7 @@ img { max-width: 100%; display: block; }
   .site-nav { top: 40px; height: 56px; }
   .brand-word { font-size: 18px; }
   .subscribe-btn, .icon-btn:nth-child(2) { display: none; }
+  .icon-btn { width: 44px; height: 44px; font-size: 18px; }
   .hero-content { padding-bottom: 170px; }
   .hero h1 { font-size: 44px; letter-spacing: -1px; }
   .hero-sub { font-size: 17px; }
@@ -265,7 +266,7 @@ img { max-width: 100%; display: block; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .mobile-bottom-nav { display: grid; }
-  #back-to-top { bottom: 130px; }
+  #back-to-top { bottom: 130px; font-size: 14px; padding: 8px 12px; width: auto; height: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
