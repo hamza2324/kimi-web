@@ -9,6 +9,7 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="HJTrending">
   <link rel="canonical" href="https://hjtrending.site/contact/">
+  <link rel="stylesheet" href="../assets/css/main.css">
   <style>
     :root {
       --bg: #080808;
@@ -27,35 +28,11 @@
       line-height: 1.85;
     }
     a { color: inherit; text-decoration: none; transition: color 0.25s ease; }
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1100;
-      height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      background: rgba(8, 8, 8, 0.92);
-      backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 45, 85, 0.15);
-    }
-    .brand { display: flex; gap: 10px; align-items: center; }
-    .brand-badge {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 34px;
-      background: var(--accent);
-      font-family: "JetBrains Mono", monospace;
-      font-weight: 500;
-      clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
-      box-shadow: 0 0 24px rgba(255, 45, 85, 0.35);
-    }
-    .brand-word { font-family: "Syne", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 1px; }
     main {
       max-width: 600px;
-      margin: 80px auto;
+      margin-top: 120px;
+      margin-left: auto;
+      margin-right: auto;
       padding: 40px 20px;
     }
     h1 {
@@ -98,6 +75,86 @@
       resize: vertical;
       min-height: 140px;
       font-family: "Lora", serif;
+    }
+    button {
+      background: linear-gradient(135deg, var(--accent), #cc0033);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 28px;
+      color: #fff;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 20px rgba(255, 45, 85, 0.35);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(255, 45, 85, 0.4);
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 16px;
+      background: rgba(255, 45, 85, 0.1);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 45, 85, 0.2);
+      transition: all 0.25s ease;
+    }
+    .back-link:hover {
+      background: rgba(255, 45, 85, 0.15);
+      border-color: var(--accent);
+    }
+    .success-message {
+      display: none;
+      background: rgba(0, 255, 135, 0.1);
+      border: 1px solid rgba(0, 255, 135, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      color: #00ff87;
+      text-align: center;
+    }
+    .success-message.show {
+      display: block;
+    }
+    @media (max-width: 767px) {
+      main { margin-top: 100px; padding: 30px 16px; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600&family=JetBrains+Mono:wght@500&family=Lora:wght@400&family=Syne:wght@800&display=swap">
+</head>
+<body>
+  <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080808;color:#f8f8f8;font-family:'Lora',serif}.breaking-ticker{position:sticky;top:0;z-index:1200;height:40px;background:#FF2D55;display:flex;align-items:center;overflow:hidden}.site-nav{position:sticky;top:40px;z-index:1100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,45,85,.15)}</style>
+  <div class="breaking-ticker" aria-label="Breaking news ticker">
+    <span class="ticker-live"><strong>LIVE</strong><i></i></span>
+    <div class="ticker-viewport"><div id="ticker-track" class="ticker-track"></div></div>
+  </div>
+
+  <header class="site-nav" id="site-nav">
+    <a class="brand" href="../" aria-label="HJTrending home">
+      <span class="brand-badge">HJ</span>
+      <span class="brand-word">TRENDING</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../fifa/">FIFA 2026 <span class="nav-live">LIVE</span></a>
+      <a href="../sports/">Sports</a>
+      <a href="../entertainment/">Entertainment</a>
+      <a href="../trending/">Trending</a>
+      <a href="../gaming/">Gaming</a>
+      <a href="../news/">News</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="open-search" class="icon-btn" aria-label="Open search">Search</button>
+      <a class="subscribe-btn" href="../index.html#newsletter">Subscribe</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
     }
     button {
       background: linear-gradient(135deg, var(--accent), #cc0033);
@@ -190,7 +247,7 @@
 
     <a href="../" class="back-link">← Back to Home</a>
   </main>
-
+  <script src="../assets/js/main.js" defer></script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       const successMsg = document.getElementById('successMessage');
