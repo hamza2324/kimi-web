@@ -1,13 +1,27 @@
 ﻿<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>404 | HJTrending</title><meta name="description" content="Page not found on HJTrending."><link rel="stylesheet" href="assets/css/main.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>404 | HJTrending</title><meta name="description" content="Page not found on HJTrending."><style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080808;color:#f8f8f8;font-family:'Lora',serif}.breaking-ticker{position:sticky;top:0;z-index:1200;height:40px;background:#FF2D55;display:flex;align-items:center;overflow:hidden}.site-nav{position:sticky;top:40px;z-index:1100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,45,85,.15)}</style><link rel="stylesheet" href="assets/css/main.css"></head>
 <body>
-<main class="section" style="min-height:80vh;display:grid;place-content:center;text-align:center">
+<div class="breaking-ticker" aria-label="Breaking news ticker">
+  <span class="ticker-live"><strong>LIVE</strong><i></i></span>
+  <div class="ticker-viewport"><div id="ticker-track" class="ticker-track"></div></div>
+</div>
+<header class="site-nav" id="site-nav">
+  <a class="brand" href="./" aria-label="HJTrending home"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a>
+  <nav class="desktop-nav" aria-label="Primary"><a href="./">Home</a><a href="fifa/">FIFA 2026 <span class="nav-live">LIVE</span></a><a href="sports/">Sports</a><a href="entertainment/">Entertainment</a><a href="trending/">Trending</a><a href="gaming/">Gaming</a><a href="news/">News</a></nav>
+  <div class="nav-actions">
+    <button id="open-search" class="icon-btn" aria-label="Open search">Search</button>
+    <a class="subscribe-btn" href="index.html#newsletter">Subscribe</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main class="section" style="min-height:80vh;display:grid;place-content:center;text-align:center;margin-top:120px">
   <p class="mono" style="color:#FF2D55">ERROR 404</p>
   <h1 style="font-family:'Syne',sans-serif;font-size:clamp(42px,8vw,84px);margin:0">Page Not Found</h1>
   <p>The page you requested is not available. Try searching or jump to trending stories.</p>
-  <div class="newsletter-form" style="max-width:700px;margin:0 auto"><input id="search-input-404" placeholder="Search FIFA, KPop, sports..." aria-label="Search"><a class="btn-primary" href="trending/">Top Trending</a></div>
-  <section style="margin-top:20px;text-align:left"><h2 style="font-family:'Space Grotesk',sans-serif">Top 5 Trending Articles</h2><ol><li><a href="post/?slug=global-trending-radar-five-stories">Global Trending Radar</a></li><li><a href="post/?slug=fifa-world-cup-2026-complete-guide">FIFA 2026 Complete Guide</a></li><li><a href="post/?slug=kpop-demon-hunters-hidden-lore-soda-pop">Soda Pop Hidden Lore</a></li><li><a href="post/?slug=viral-sports-moments-2026">Viral Sports Moments</a></li><li><a href="post/?slug=host-city-security-drills-fifa-2026">Host City Security Drills</a></li></ol></section>
+  <div class="newsletter-form" style="max-width:700px;margin:0 auto"><input id="search-input-404" placeholder="Search FIFA, sports, trending..." aria-label="Search"><a class="btn-primary" href="trending/">Top Trending</a></div>
+  <section style="margin-top:20px;text-align:left"><h2 style="font-family:'Space Grotesk',sans-serif">Top 5 Trending Articles</h2><ol><li><a href="post/?slug=global-trending-radar-five-stories">Global Trending Radar</a></li><li><a href="post/?slug=fifa-world-cup-2026-complete-guide">FIFA 2026 Complete Guide</a></li><li><a href="post/?slug=viral-sports-moments-2026">Viral Sports Moments</a></li><li><a href="post/?slug=entertainment-spotlight-2026">Entertainment Spotlight</a></li><li><a href="post/?slug=host-city-security-drills-fifa-2026">Host City Security Drills</a></li></ol></section>
 </main>
+<script src="assets/js/main.js" defer></script>
 </body></html>
 
 

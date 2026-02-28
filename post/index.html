@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Read in-depth FIFA World Cup 2026, KPop, sports, entertainment, and trending analysis on HJTrending.">
-  <meta name="keywords" content="fifa world cup 2026, kpop news 2026, sports news today, trending news, entertainment news today">
+  <meta name="description" content="Read in-depth FIFA World Cup 2026, sports, entertainment, and trending analysis on HJTrending.">
+  <meta name="keywords" content="fifa world cup 2026, sports news today, trending news, entertainment news today">
   <meta property="og:title" content="HJTrending Article">
   <meta property="og:description" content="In-depth analysis from HJTrending editors.">
   <meta property="og:image" content="https://hjtrending.site/assets/images/og/homepage-og.jpg">
@@ -17,13 +17,23 @@
   <link rel="stylesheet" href="../assets/css/post.css">
 </head>
 <body>
+  <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080808;color:#f8f8f8;font-family:'Lora',serif}.breaking-ticker{position:sticky;top:0;z-index:1200;height:40px;background:#FF2D55;display:flex;align-items:center;overflow:hidden}.site-nav{position:sticky;top:40px;z-index:1100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,45,85,.15)}</style>
+  <div class="breaking-ticker" aria-label="Breaking news ticker">
+    <span class="ticker-live"><strong>LIVE</strong><i></i></span>
+    <div class="ticker-viewport"><div id="ticker-track" class="ticker-track"></div></div>
+  </div>
   <div class="read-progress" id="read-progress"></div>
   <header class="site-nav" id="site-nav">
-    <a class="brand" href="../"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a>
-    <nav class="desktop-nav"><a href="../">Home</a><a href="../fifa/">FIFA 2026</a><a href="../sports/">Sports</a><a href="../entertainment/">Entertainment</a><a href="../news/">News</a><a href="../trending/">Trending</a></nav>
+    <a class="brand" href="../" aria-label="HJTrending home"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a>
+    <nav class="desktop-nav" aria-label="Primary"><a href="../">Home</a><a href="../fifa/">FIFA 2026 <span class="nav-live">LIVE</span></a><a href="../sports/">Sports</a><a href="../entertainment/">Entertainment</a><a href="../trending/">Trending</a><a href="../gaming/">Gaming</a><a href="../news/">News</a></nav>
+    <div class="nav-actions">
+      <button id="open-search" class="icon-btn" aria-label="Open search">Search</button>
+      <a class="subscribe-btn" href="../index.html#newsletter">Subscribe</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
-  <main class="post-shell">
+  <main class="post-shell" style="margin-top:120px">
     <header class="post-header">
       <p class="mono" id="post-category">FIFA</p>
       <h1 id="post-title">Loading article...</h1>

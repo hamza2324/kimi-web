@@ -7,15 +7,14 @@
   <url><loc>https://hjtrending.site/trending/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://hjtrending.site/gaming/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://hjtrending.site/news/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hjtrending.site/about/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hjtrending.site/contact/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hjtrending.site/adsense/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/privacy-policy/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/disclaimer/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/terms-of-service/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/cookie-policy/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/editorial-policy/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hjtrending.site/post/</loc><changefreq>always</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hjtrending.site/about/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/contact/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/privacy-policy/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/disclaimer/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/terms-of-service/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/cookie-policy/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/editorial-policy/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hjtrending.site/post/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://hjtrending.site/post/?slug=entertainment-spotlight-2026</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://hjtrending.site/post/?slug=ai-crowd-era-in-sports-games</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://hjtrending.site/post/?slug=trending-radar-weekly</loc><changefreq>daily</changefreq><priority>0.8</priority></url>

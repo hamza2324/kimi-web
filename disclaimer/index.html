@@ -16,8 +16,13 @@
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-<header class="site-nav" id="site-nav"><a class="brand" href="../"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a></header>
-<main class="section" style="margin-top:84px;max-width:900px">
+  <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080808;color:#f8f8f8;font-family:'Lora',serif}.breaking-ticker{position:sticky;top:0;z-index:1200;height:40px;background:#FF2D55;display:flex;align-items:center;overflow:hidden}.site-nav{position:sticky;top:40px;z-index:1100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,45,85,.15)}</style>
+  <div class="breaking-ticker" aria-label="Breaking news ticker">
+    <span class="ticker-live"><strong>LIVE</strong><i></i></span>
+    <div class="ticker-viewport"><div id="ticker-track" class="ticker-track"></div></div>
+  </div>
+<header class="site-nav" id="site-nav"><a class="brand" href="../" aria-label="HJTrending home"><span class="brand-badge">HJ</span><span class="brand-word">TRENDING</span></a><nav class="desktop-nav" aria-label="Primary"><a href="../">Home</a><a href="../fifa/">FIFA 2026 <span class="nav-live">LIVE</span></a><a href="../sports/">Sports</a><a href="../entertainment/">Entertainment</a><a href="../trending/">Trending</a><a href="../gaming/">Gaming</a><a href="../news/">News</a></nav><div class="nav-actions"><button id="open-search" class="icon-btn" aria-label="Open search">Search</button><a class="subscribe-btn" href="../index.html#newsletter">Subscribe</a><button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
+<main class="section" style="margin-top:120px;max-width:900px">
   <h1 style="font-family:'Syne',sans-serif">Disclaimer</h1>
   <p>HJTrending publishes news and analysis for informational purposes only. Content is not legal, financial, or medical advice.</p>
   <p>We attempt to keep stories accurate and updated, but rapidly changing events can affect previously published information.</p>
