@@ -49,7 +49,7 @@
     fetch('../data/posts.json').then(r=>r.json()).then(posts=>{
       const host=document.getElementById('hub-cards');
       const items=posts.filter(p=>p.category==='entertainment').slice(0,8);
-      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../post/?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
+      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../blog-post.html?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
     }).catch(()=>{});
   </script>
 </body>

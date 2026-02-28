@@ -72,7 +72,7 @@
           return;
         }
         results.innerHTML = found.map((p) => `
-          <a class="search-result" href="${sitePath(`/post/?slug=${encodeURIComponent(p.slug)}`)}">
+          <a class="search-result" href="${sitePath(`/blog-post.html?slug=${encodeURIComponent(p.slug)}`)}">
             <strong>${highlight(p.title, q)}</strong>
             <p>${highlight(p.excerpt, q)}</p>
           </a>

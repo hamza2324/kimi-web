@@ -1,25 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sports News Today 2026, Viral Moments, Football, Cricket & Basketball | HJTrending</title>
-  <meta name="description" content="Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide.">
-  <meta name="keywords" content="sports news today, trending sports news today, viral sports moments 2026, football news today 2026">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://hjtrending.site/sports/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Sports News Today 2026, Viral Moments, Football, Cricket & Basketball">
-  <meta property="og:description" content="Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide.">
-  <meta property="og:url" content="https://hjtrending.site/sports/">
-  <meta property="og:image" content="https://hjtrending.site/assets/images/og/homepage-og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sports News Today 2026, Viral Moments, Football, Cricket & Basketball">
-  <meta name="twitter:description" content="Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide.">
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"SPORTS WORLD","url":"https://hjtrending.site/sports/","description":"Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide."}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports News Today 2026, Viral Moments, Football, Cricket & Basketball | HJTrending</title>
+<meta name="description" content="Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sports News Today 2026, Viral Moments, Football, Cricket & Basketball">
+<meta property="og:description" content="Daily sports coverage including football, cricket, basketball, and viral moments shaping fan culture worldwide.">
+<meta property="og:url" content="https://hjtrending.site/sports/">
+<meta property="og:image" content="https://hjtrending.site/assets/images/og/homepage-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://hjtrending.site/sports/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- ticker and nav same as index -->
+<div class="ticker">
+  <div class="ticker__label">🔴 LIVE</div>
+  <div class="ticker__track" id="ticker-track-sports">
+    <!-- items duplicated by JS -->
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <div class="nav__logo">HJ<span>·</span>TRENDING</div>
+    <ul class="nav__links">
+      <li><a href="../" class="active">Home</a></li>
+      <li><a href="../fifa/">FIFA 2026<span class="live-tag">LIVE</span></a></li>
+      <li><a href="../sports/">Sports</a></li>
+      <li><a href="../entertainment/">Entertainment</a></li>
+      <li><a href="../trending/">Trending</a></li>
+      <li><a href="../gaming/">Gaming</a></li>
+      <li><a href="../news/">News</a></li>
+    </ul>
+    <div class="nav__right">
+      <button class="nav__search" id="searchBtn"><svg><!-- search icon --></svg></button>
+      <button class="btn-subscribe">SUBSCRIBE</button>
+      <button class="nav__hamburger" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</div>
+<!-- rest of body follows original structure -->
   <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080808;color:#f8f8f8;font-family:'Lora',serif}.breaking-ticker{position:sticky;top:0;z-index:1200;height:40px;background:#FF2D55;display:flex;align-items:center;overflow:hidden}.site-nav{position:sticky;top:40px;z-index:1100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,45,85,.15)}</style>
   <div class="breaking-ticker" aria-label="Breaking news ticker">
     <span class="ticker-live"><strong>LIVE</strong><i></i></span>
@@ -49,7 +76,7 @@
     fetch('../data/posts.json').then(r=>r.json()).then(posts=>{
       const host=document.getElementById('hub-cards');
       const items=posts.filter(p=>p.category==='sports').slice(0,8);
-      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../post/?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
+      host.innerHTML=items.length?items.map(p=><article class="article-card"><h3><a href=`../blog-post.html?slug=${encodeURIComponent(p.slug)}`>${p.title}</a></h3><p class="card-meta">${p.date} - ${p.readTime}</p></article>).join(''):'<article class="article-card"><h3>Coming soon</h3><p class="card-meta">Fresh coverage is being prepared.</p></article>';
     }).catch(()=>{});
   </script>
 </body>

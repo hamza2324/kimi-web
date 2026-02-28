@@ -139,20 +139,20 @@ const breaking = {
   updated: new Date().toISOString(),
   items: posts.filter((p) => p.breaking || p.trending).slice(0, 8).map((p) => ({
     title: p.title,
-    url: `/post/?slug=${encodeURIComponent(p.slug)}`
+    url: `/blog-post.html?slug=${encodeURIComponent(p.slug)}`
   }))
 };
 fs.writeFileSync(path.join(DATA_DIR, 'breaking-news.json'), JSON.stringify(breaking, null, 2) + '\n');
 
 const staticUrls = [
   '/', '/fifa/', '/sports/', '/entertainment/', '/trending/', '/gaming/',
-  '/news/', '/about/', '/contact/', '/privacy-policy/', '/disclaimer/', '/terms-of-service/', '/cookie-policy/', '/editorial-policy/', '/post/'
+  '/news/', '/about/', '/contact/', '/privacy-policy/', '/disclaimer/', '/terms-of-service/', '/cookie-policy/', '/editorial-policy/', '/blog-post.html'
 ];
-const postUrls = posts.map((p) => `/post/?slug=${encodeURIComponent(p.slug)}`);
+const postUrls = posts.map((p) => `/blog-post.html?slug=${encodeURIComponent(p.slug)}`);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...staticUrls, ...postUrls].map((u) => `  <url><loc>${SITE_URL}${u}</loc><changefreq>daily</changefreq><priority>${u === '/' ? '1.0' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
 
-const newsItems = posts.slice(0, 20).map((p) => `  <url>\n    <loc>${SITE_URL}/post/?slug=${encodeURIComponent(p.slug)}</loc>\n    <news:news>\n      <news:publication><news:name>HJTrending</news:name><news:language>en</news:language></news:publication>\n      <news:publication_date>${p.date}</news:publication_date>\n      <news:title>${p.title.replace(/[&<>]/g, '')}</news:title>\n    </news:news>\n  </url>`).join('\n');
+const newsItems = posts.slice(0, 20).map((p) => `  <url>\n    <loc>${SITE_URL}/blog-post.html?slug=${encodeURIComponent(p.slug)}</loc>\n    <news:news>\n      <news:publication><news:name>HJTrending</news:name><news:language>en</news:language></news:publication>\n      <news:publication_date>${p.date}</news:publication_date>\n      <news:title>${p.title.replace(/[&<>]/g, '')}</news:title>\n    </news:news>\n  </url>`).join('\n');
 const newsXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsItems}\n</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap-news.xml'), newsXml);
 

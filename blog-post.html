@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article | HJ Trending</title>
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="">
+<link rel="canonical" href="">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* global variables and utilities copied from index page */
+  :root {
+    --red: #E8002D;
+    --red-hover: #c4001f;
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --grey-100: #f8f8f8;
+    --grey-200: #ebebeb;
+    --grey-300: #d0d0d0;
+    --grey-500: #888;
+    --grey-700: #444;
+    --grey-900: #1a1a1a;
+    --yellow: #FFE600;
+    --green: #00C853;
+    --blue: #0066FF;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-serif: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --nav-h: 56px;
+    --ticker-h: 36px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* enforce no rounded corners on this template */
+  * { border-radius: 0 !important; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* ticker styles (same as index) */
+  .ticker { background: var(--black); color: var(--white); height: var(--ticker-h); display: flex; align-items: center; overflow: hidden; position: relative; z-index: 100; }
+  .ticker__label { background: var(--red); color: var(--white); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; gap: 6px; white-space: nowrap; flex-shrink: 0; z-index: 1; }
+  .ticker__label::after { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0;} }
+  .ticker__track { display: flex; animation: ticker-scroll 40s linear infinite; }
+  .ticker__track:hover { animation-play-state: paused; }
+  .ticker__item { white-space: nowrap; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: .02em; padding: 0 40px; color: var(--grey-300); display: flex; align-items: center; gap: 10px; }
+  .ticker__item::before { content: '◆'; color: var(--red); font-size: 7px; }
+  @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* nav styles copied from index */
+  .nav-wrap { position: sticky; top: 0; z-index: 99; border-bottom: 2px solid var(--black); background: var(--white); }
+  .nav { max-width: 1280px; margin: 0 auto; padding: 0 20px; height: var(--nav-h); display: flex; align-items: center; gap: 0; }
+  .nav__logo { font-family: var(--font-display); font-size: 28px; letter-spacing: .04em; color: var(--black); }
+  .nav__links { list-style: none; display: flex; gap: 24px; }
+  .nav__links a { font-family: var(--font-body); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; padding: 0 6px; }
+  .nav__links a.active, .nav__links a:hover { color: var(--red); }
+  .nav__right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .nav__search, .btn-subscribe, .nav__hamburger { background: none; border: 0; cursor: pointer; }
+  .btn-subscribe { font-family: var(--font-body); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; padding: 10px 16px; border: 1px solid var(--black); }
+
+  /* highlight bar (same as index) */
+  .highlight-bar { background: var(--grey-100); overflow-x: auto; }
+  .highlight-bar__inner { display: flex; gap: 12px; padding: 8px 20px; }
+  .highlight-label { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--black); white-space: nowrap; }
+  .highlight-pill { font-family: var(--font-body); font-size: 12px; color: var(--black); background: var(--grey-200); padding: 4px 10px; white-space: nowrap; }
+
+  /* reading progress bar */
+  #read-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--red); z-index: 300; transition: width .1s linear; }
+
+  /* breadcrumb bar */
+  .breadcrumb-bar { width: 100%; border-bottom: 1px solid var(--grey-200); background: var(--white); }
+  .breadcrumb { max-width: 1280px; margin: 0 auto; padding: 10px 20px; font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); display: flex; gap: 6px; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--grey-500); }
+  .breadcrumb a:hover { color: var(--black); }
+  .breadcrumb-back { display: none; font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); padding: 10px 20px; }
+  @media (max-width: 600px) {
+    .breadcrumb { display: none; }
+    .breadcrumb-back { display: block; }
+  }
+
+  /* article header */
+  .article-hero { max-height: 520px; overflow: hidden; position: relative; }
+  .article-hero img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+  @media (max-width:600px) { .article-hero img { aspect-ratio: 16 / 9; } }
+  .article-hero figcaption { font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); padding: 8px 20px; }
+
+  .article-header { max-width: 760px; margin: 0 auto; padding: 32px 20px 0; }
+  .cat-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 16px; }
+  .cat-tag[data-category="sports"] { color: var(--blue); background: rgba(0,102,255,.1); }
+  .cat-tag[data-category="gaming"] { color: purple; background: rgba(128,0,128,.1); }
+  .cat-tag[data-category="entertainment"] { color: var(--add-orange, orange); background: rgba(255,165,0,.1); }
+  .cat-tag[data-category="trending"] { color: var(--red); background: rgba(232,0,45,.1); }
+  .cat-tag[data-category="fifa"] { color: var(--green); background: rgba(0,200,83,.1); }
+
+  .article-header h1 { font-family: var(--font-serif); font-size: clamp(28px, 4.5vw, 54px); line-height: 1.06; font-weight: 400; letter-spacing: -.01em; margin-bottom: 16px; }
+  .article-deck { font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.55; color: var(--grey-700); margin-bottom: 24px; max-width: 640px; }
+
+  .meta-bar { border-top: 2px solid var(--black); border-bottom: 1px solid var(--grey-200); padding: 14px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .meta-left { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 36px; height: 36px; background: var(--black); color: var(--white); font-family: var(--font-display); font-size: 16px; display: grid; place-items: center; }
+  .author-info { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--black); }
+  .author-role { font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); }
+  .meta-right { font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); display: flex; gap: 16px; }
+
+  .share-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 0; }
+  .share-row button, .share-row a { border: 1px solid var(--grey-300); padding: 7px 14px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--grey-700); background: none; cursor: pointer; }
+  .share-row button:hover, .share-row a:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+
+  /* article body typography */
+  .article-body { max-width: 720px; margin: 0 auto; padding: 32px 20px 48px; }
+  .article-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.8; color: var(--grey-900); margin-bottom: 26px; }
+  .article-body h2 { font-family: var(--font-serif); font-size: 30px; font-weight: 400; margin: 48px 0 16px; border-bottom: 2px solid var(--black); padding-bottom: 10px; }
+  .article-body h3 { font-family: var(--font-body); font-size: 21px; font-weight: 600; margin: 36px 0 12px; color: var(--black); }
+  .article-body h4 { font-family: var(--font-body); font-size: 17px; font-weight: 700; margin: 28px 0 8px; color: var(--black); }
+  .article-body blockquote { border-left: 4px solid var(--red); padding: 4px 0 4px 24px; margin: 32px 0; font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--grey-700); }
+  .article-body blockquote .attribution { font-family: var(--font-mono); font-size: 11px; color: var(--grey-500); }
+  .article-body a { color: var(--red); text-decoration: none; }
+  .article-body a:hover { text-decoration: underline; }
+  .article-body strong { font-weight: 600; color: var(--black); }
+  .article-body img { width:100%; border:1px solid var(--grey-200); margin:32px 0; }
+  .article-body img + figcaption { font-family: var(--font-mono); font-size: 10px; color: var(--grey-500); margin-top:4px; }
+  .article-body ol, .article-body ul { font-family: var(--font-body); font-size: 16px; line-height: 1.7; margin-left:0; padding-left:20px; margin-bottom:20px; }
+  .article-body li { margin-bottom:8px; }
+  .article-body code { font-family: var(--font-mono); font-size:14px; background: var(--grey-100); padding:2px 6px; border:1px solid var(--grey-200); color: var(--red); }
+  .article-body hr { border:none; border-top:2px solid var(--grey-200); margin:40px 0; }
+  /* ad slot placeholder style */
+  .ad-slot { border:1px dashed var(--grey-300); background: var(--grey-100); min-height:90px; display:flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-size:10px; color: var(--grey-300); text-transform:uppercase; }
+
+  /* tags row */
+  .tags-row { max-width:720px; margin:32px auto; font-family: var(--font-mono); font-size:10px; color: var(--grey-500); }
+  .tags-row .tag { display:inline-block; border:1px solid var(--grey-300); padding:5px 10px; font-weight:700; text-transform:uppercase; margin-right:8px; cursor:pointer; }
+  .tags-row .tag:hover { background: var(--black); color: var(--white); }
+
+  /* author bio */
+  .author-bio { border:2px solid var(--black); padding:24px; margin:32px 0; display:flex; gap:20px; align-items:flex-start; max-width:720px; margin-left:auto; margin-right:auto; }
+  .author-bio .avatar { width:48px; height:48px; background: var(--black); color: var(--white); font-family: var(--font-display); font-size:20px; display:grid; place-items:center; }
+  .author-bio .info { font-family: var(--font-body); }
+  .author-bio .info h3 { margin:0;font-size:16px;font-weight:600; }
+  .author-bio .info p { font-size:14px; color: var(--grey-700); line-height:1.6; margin:4px 0; }
+  .author-bio .info a { font-family: var(--font-mono); font-size:11px; color: var(--red); }
+
+  /* related posts */
+  .related-section { border-top:2px solid var(--black); margin-top:48px; }
+  .related-inner { max-width:1280px; margin:0 auto; padding:40px 20px; }
+  .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .related-grid a.article-card { background: var(--grey-100); border:1px solid var(--grey-300); padding:16px; }
+  .related-grid a.article-card h3 { margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.3;color: var(--black);}  
+  .related-grid a.article-card .card-meta { font-family: var(--font-mono); font-size:10px; color: var(--grey-500); margin-top:6px; }
+  @media (max-width:767px) { .related-grid { grid-template-columns:1fr; } }
+
+  /* dark band like homepage */
+  .dark-band { background: var(--black); color: var(--white); border-top:2px solid var(--black); border-bottom:2px solid var(--black); padding:40px 20px; }
+  .dark-band .band-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1280px; margin:0 auto; }
+  .dark-band .band-grid a { font-family: var(--font-serif); font-size:16px; color: #fff; }
+</style>
+</head>
+<body>
+  <!-- ticker -->
+  <div class="ticker">
+    <div class="ticker__label">BREAKING</div>
+    <div class="ticker__track" id="ticker-track"></div>
+  </div>
+
+  <!-- nav wrap -->
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" class="nav__logo">HJ·TRENDING</a>
+      <ul class="nav__links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/fifa2026.html">FIFA 2026 <span class="live-tag">LIVE</span></a></li>
+        <li><a href="/sports.html">Sports</a></li>
+        <li><a href="/entertainment.html">Entertainment</a></li>
+        <li><a href="/trending.html">Trending</a></li>
+        <li><a href="/gaming.html">Gaming</a></li>
+        <li><a href="/news.html">News</a></li>
+      </ul>
+      <div class="nav__right">
+        <button class="nav__search" id="searchBtn" aria-label="Search">🔍</button>
+        <button class="btn-subscribe">Subscribe</button>
+        <button class="nav__hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- highlight bar -->
+  <div class="highlight-bar">
+    <div class="highlight-bar__inner">
+      <span class="highlight-label">🔥 Hot Right Now:</span>
+      <a href="#" class="highlight-pill">Sample item</a>
+    </div>
+  </div>
+
+  <div id="read-progress"></div>
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb-bar">
+    <nav class="breadcrumb" id="breadcrumb-full">
+      <a href="/">Home</a> › <a href="#" id="breadcrumb-category">Category</a> › <span id="breadcrumb-current">Title</span>
+    </nav>
+    <a href="#" class="breadcrumb-back" id="breadcrumb-back">← Back to <span id="breadcrumb-back-cat">Category</span></a>
+  </div>
+
+  <!-- article hero -->
+  <figure class="article-hero">
+    <img id="post-image" src="" alt="" width="1200" height="675">
+    <figcaption id="post-hero-caption"></figcaption>
+  </figure>
+
+  <header class="article-header">
+    <span class="cat-tag" id="post-category" data-category=""></span>
+    <h1 id="post-title">Loading…</h1>
+    <p class="article-deck" id="post-deck"></p>
+    <div class="meta-bar">
+      <div class="meta-left">
+        <div class="author-avatar" id="author-avatar">HJ</div>
+        <div>
+          <div class="author-info" id="post-author">HJ Trending Staff</div>
+          <div class="author-role">HJ Trending Staff</div>
+        </div>
+      </div>
+      <div class="meta-right">
+        <span id="post-date">Feb 28, 2026</span>
+        <span id="post-read">0 min read</span>
+        <span id="post-views"></span>
+      </div>
+    </div>
+
+    <div class="share-row" id="share-top">
+      <a id="share-x" target="_blank">𝕏 Share</a>
+      <a id="share-fb" target="_blank">f Share</a>
+      <a id="share-wa" target="_blank">💬 WhatsApp</a>
+      <button id="copy-link">🔗 Copy Link</button>
+    </div>
+  </header>
+
+  <article class="article-body" id="post-content"></article>
+
+  <div class="tags-row" id="tags-row"><span>Topics:</span></div>
+
+  <div class="share-row" id="share-bottom">
+    <a id="share-x-bot" target="_blank">𝕏 Share</a>
+    <a id="share-fb-bot" target="_blank">f Share</a>
+    <a id="share-wa-bot" target="_blank">💬 WhatsApp</a>
+    <button id="copy-link-bot">🔗 Copy Link</button>
+  </div>
+
+  <div class="ad-slot" data-ad-position="post-footer">Advertisement</div>
+
+  <div class="author-bio">
+    <div class="avatar">HJ</div>
+    <div class="info">
+      <h3>Hamza Jadoon</h3>
+      <p class="title">Founder, HJ Trending</p>
+      <p class="bio">Hamza is a veteran digital journalist who loves breaking big stories before breakfast. He built HJ Trending to bring fast, fearless coverage to culture, sports, and tech.</p>
+      <a href="https://hamzajadoon.cloud" target="_blank">hamzajadoon.cloud</a>
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="badge">READ NEXT</div>
+      <div class="related-grid" id="related-grid"></div>
+      <a href="#" id="see-all-category" style="border:1px solid var(--black); padding:10px 20px; font-family: var(--font-mono); font-size:11px; font-weight:700; text-transform:uppercase; display:inline-block;">See All Stories →</a>
+    </div>
+  </section>
+
+  <section class="dark-band" id="more-from">
+    <div class="band-grid">
+      <!-- to be filled by main.js or blog-engine later if desired -->
+    </div>
+  </section>
+
+  <!-- reuse footer from index -->
+  <!-- copy footer markup here -->
+  <footer>
+    <!-- simplified for brevity or copy entire earlier footer markup -->
+    <div class="footer-bottom"><p>(c) 2026 HJ Trending</p></div>
+    <div class="footer-line"></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/blog-engine.js" defer></script>
+</body>
+</html>
+```}]}```}]
